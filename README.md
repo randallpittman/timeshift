@@ -1,3 +1,7 @@
+| :mega: NOTE :mega:         |
+|:---------------------------|
+| Timeshift is now maintained by the [Linux Mint](https://linuxmint.com/) project.<br/> Any feature requests, pull requests, or issues should be submitted to the [Linux Mint repository](https://github.com/linuxmint/timeshift).<br/> <br/>This repository contains the original code for Timeshift, and has been archived to avoid duplication of effort. Any open items in the issue tracker that are still relevant should be resubmitted in the new repo. Development will continue in the new repository. |
+
 # Timeshift
 
 Timeshift for Linux is an application that provides functionality similar to the _System Restore_ feature in Windows and the _Time Machine_ tool in Mac OS. Timeshift protects your system by taking incremental snapshots of the file system at regular intervals. These snapshots can be restored at a later date to undo all changes to the system. 
@@ -75,6 +79,10 @@ You can selectively include items for backup from the ***Settings*** window. Sel
 - You can also Timeshift across distributions. Let's say you are currently using Xubuntu and decide to try out Linux Mint. You install Linux Mint on your system and try it out for a week before deciding to go back to Xubuntu. Using Timeshift you can simply restore the last week's snapshot to get your Xubuntu system back. Timeshift will take care of things like reinstalling the bootloader and other details. 
 - Since installing a new linux distribution also formats your root partition you need to save your snapshots on a separate linux partition for this to work.
 - It is recommended to include hidden items in home directory by selecting the option "*Include  Hidden Items*" from *Settings* > *Users*.
+
+### Post Restore Hooks
+
+- Scripts can be run at the end of a restore job for anything that may need to be done prior to rebooting. The location for these scripts is `/etc/timeshift/restore-hooks.d`.  Note: the script(s) will be run from the restored filesystem.
 
 ## Supported System Configurations
 
